@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenSci.FamilyBudget.WebApi"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FamilyBudget.WebApi", "FamilyBudget.WebApi", "{95156592-81DE-4F32-9AA5-5F7E93B719D4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FamilyBudget.DesktopApp", "FamilyBudget.DesktopApp", "{A9873525-851F-4856-8AB8-034D0789BDC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenSci.FamilyBudget.DesktopApp", "GenSci.FamilyBudget.DesktopApp\GenSci.FamilyBudget.DesktopApp.csproj", "{56042999-C3A8-4995-8047-368DD5D28F59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +27,17 @@ Global
 		{BF9986EA-4E7B-47D4-AA4A-BE045D099FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF9986EA-4E7B-47D4-AA4A-BE045D099FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF9986EA-4E7B-47D4-AA4A-BE045D099FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56042999-C3A8-4995-8047-368DD5D28F59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56042999-C3A8-4995-8047-368DD5D28F59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56042999-C3A8-4995-8047-368DD5D28F59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56042999-C3A8-4995-8047-368DD5D28F59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BF9986EA-4E7B-47D4-AA4A-BE045D099FDA} = {95156592-81DE-4F32-9AA5-5F7E93B719D4}
+		{56042999-C3A8-4995-8047-368DD5D28F59} = {A9873525-851F-4856-8AB8-034D0789BDC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F2AA5875-142A-4702-B43C-7671EA1402F5}
