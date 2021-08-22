@@ -2,46 +2,44 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace GenSci.FamilyBudget.DataContext.Repository
 {
     /// <summary>
     /// Repository for User table operations.
     /// </summary>
-    public class UserRepository : IRepository<User>
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         /// <summary>
         /// Database application context.
         /// </summary>
         private readonly AppContext _appContext;
 
-        public UserRepository(AppContext appContext)
+        /// <summary>
+        /// Database data set from <see cref="TEntity"/> table.
+        /// </summary>
+        private readonly DbSet<TEntity> _dbSet;
+
+        public Repository(AppContext appContext)
         {
             _appContext = appContext;
+            _dbSet = appContext.Set<TEntity>();
         }
 
-        IEnumerable<User> IRepository<User>.All => _appContext.Users;
+        IQueryable<TEntity> IRepository<TEntity>.All => _dbSet.AsNoTracking();
 
-        User IRepository<User>.FindById(int id) => _appContext.Users.Find(id);
+        TEntity IRepository<TEntity>.FindById(int id) => _dbSet.Find(id);
 
-        void IRepository<User>.Add(User entity)
-        {
-            _appContext.Users.Add(entity);
-        }
+        IQueryable<TEntity> IRepository<TEntity>.Get(Func<TEntity, bool> predicate) => _dbSet.AsNoTracking().Where(predicate).AsQueryable();
 
-        void IRepository<User>.Delete(User entity)
-        {
-            _appContext.Users.Remove(entity);
-        }
+        void IRepository<TEntity>.Add(TEntity entity) => _dbSet.Add(entity);
 
-        void IRepository<User>.Update(User entity)
-        {
-            _appContext.Entry(entity).State = EntityState.Modified;
-        }
+        void IRepository<TEntity>.Delete(TEntity entity) => _dbSet.Remove(entity);
 
-        void IRepository<User>.Save()
-        {
-            _appContext.SaveChanges();
-        }
+        void IRepository<TEntity>.Update(TEntity entity) => _appContext.Entry(entity).State = EntityState.Modified;
+
+        async Task IRepository<TEntity>.SaveAsync() => await _appContext.SaveChangesAsync();
     }
 }

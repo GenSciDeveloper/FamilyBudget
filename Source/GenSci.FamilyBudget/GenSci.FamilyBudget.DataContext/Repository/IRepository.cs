@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace GenSci.FamilyBudget.DataContext.Repository
 {
@@ -6,12 +10,20 @@ namespace GenSci.FamilyBudget.DataContext.Repository
     /// Repository pattern interface.
     /// </summary>
     /// <typeparam name="TEntity">Entity class.</typeparam>
-    public interface IRepository<TEntity> where TEntity : class
+    public interface IRepository<TEntity> 
+        where TEntity : class
     {
         /// <summary>
         /// Property to get all data from table.
         /// </summary>
-        IEnumerable<TEntity> All { get; }
+        IQueryable<TEntity> All { get; }
+
+        /// <summary>
+        /// Get filtered data from table.
+        /// </summary>
+        /// <param name="predicate">Data filter.</param>
+        /// <returns>Filtered data.</returns>
+        IQueryable<TEntity> Get(Func<TEntity, bool> predicate);
 
         /// <summary>
         /// Add entity to the <see cref="TEntity"/> table.
@@ -41,6 +53,6 @@ namespace GenSci.FamilyBudget.DataContext.Repository
         /// <summary>
         /// Commit database operation.
         /// </summary>
-        void Save();
+        Task SaveAsync();
     }
 }
