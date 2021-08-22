@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenSci.FamilyBudget.DataCon
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenSci.FamilyBudget.WebApi", "GenSci.FamilyBudget.WebApi\GenSci.FamilyBudget.WebApi.csproj", "{BF9986EA-4E7B-47D4-AA4A-BE045D099FDA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{95156592-81DE-4F32-9AA5-5F7E93B719D4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FamilyBudget.WebApi", "FamilyBudget.WebApi", "{95156592-81DE-4F32-9AA5-5F7E93B719D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +26,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BF9986EA-4E7B-47D4-AA4A-BE045D099FDA} = {95156592-81DE-4F32-9AA5-5F7E93B719D4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F2AA5875-142A-4702-B43C-7671EA1402F5}
