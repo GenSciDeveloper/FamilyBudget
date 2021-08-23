@@ -12,6 +12,6 @@
           <vm:MainWindowViewModel/>
         </Design.DataContext>
 
-  <TabControl>
+  <TabControl x:Name="mainTabControl">
   </TabControl>
 </Window>

@@ -14,9 +14,12 @@ namespace GenSci.FamilyBudget.DesktopApp.Views
 #endif
         }
 
+        public TabControl MainTabControl => this.FindControl<TabControl>("mainTabControl");
+
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
+            MainWindowRegister.Register(this);
         }
     }
 }
