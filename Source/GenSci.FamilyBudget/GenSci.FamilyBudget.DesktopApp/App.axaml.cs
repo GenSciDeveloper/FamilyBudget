@@ -23,10 +23,7 @@ namespace GenSci.FamilyBudget.DesktopApp
             {
                 desktop.MainWindow = new MainWindow
                 {
-                    DataContext = new MainWindowViewModel
-                    {
-                        Tabs = MainWindowRegister.TabItemViewModels
-                    },
+                    DataContext = new MainWindowViewModel(MainWindowRegister.TabItemViewModels)
                 };
             }
 

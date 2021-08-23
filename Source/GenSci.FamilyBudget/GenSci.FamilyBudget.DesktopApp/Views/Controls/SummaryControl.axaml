@@ -4,18 +4,25 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="GenSci.FamilyBudget.DesktopApp.Views.Controls.SummaryControl">
-  <Grid Margin="20">
+  <Grid Margin="10">
     <Grid.RowDefinitions>
       <RowDefinition Height="0.1*"></RowDefinition>
-      <RowDefinition></RowDefinition>
+      <RowDefinition Height="0.2*"></RowDefinition>
       <RowDefinition></RowDefinition>
     </Grid.RowDefinitions>
-    <StackPanel Orientation="Horizontal">
-      <ComboBox Items="{Binding Months}" SelectedItem="{Binding CurrentMonth}" Width="150">
+
+    <StackPanel Margin="10" Grid.Row="0" Orientation="Horizontal">
+      <ComboBox Items="{Binding Months}" SelectedItem="{Binding CurrentMonth}" Width="150" MinHeight="35">
       </ComboBox>
-      <ComboBox  Items="{Binding Years}" SelectedItem="{Binding CurrentYear}" Width="100">
+      <ComboBox  Items="{Binding Years}" SelectedItem="{Binding CurrentYear}" Width="100" MinHeight="35">
       </ComboBox>
     </StackPanel>
 
+    <StackPanel  Margin="10" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Stretch">
+      <TextBlock>Доход</TextBlock>
+      <TextBlock Text="{Binding SummaryIncome}"></TextBlock>
+      <TextBlock>Расход</TextBlock>
+      <TextBlock Text="{Binding SummarySpending}"></TextBlock>
+    </StackPanel>
   </Grid>
 </UserControl>

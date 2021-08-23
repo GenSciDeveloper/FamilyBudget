@@ -1,10 +1,8 @@
-﻿using System;
+﻿using GenSci.FamilyBudget.DesktopApp.ViewModels.ControlViewModels;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GenSci.FamilyBudget.DesktopApp.ViewModels
 {
@@ -24,6 +22,9 @@ namespace GenSci.FamilyBudget.DesktopApp.ViewModels
         public string CurrentMonth => DateTime.Now.ToString("MMMM");
 
         public string CurrentYear => DateTime.Now.ToString("yyyy");
+
+        public double SummaryIncome { get; set; }
+        public double SummarySpending { get; set; }
 
         private void fillAllCollections()
         {
