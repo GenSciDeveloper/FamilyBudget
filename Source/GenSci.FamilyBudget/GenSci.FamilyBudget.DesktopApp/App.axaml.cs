@@ -3,13 +3,17 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using GenSci.FamilyBudget.DesktopApp.ViewModels;
 using GenSci.FamilyBudget.DesktopApp.Views;
+using GenSci.FamilyBudget.DesktopApp.Views.Controls;
 
 namespace GenSci.FamilyBudget.DesktopApp
 {
     public class App : Application
     {
+        MainWindowRegister _mainWindowRegister = new MainWindowRegister();
+
         public override void Initialize()
         {
+            MainWindowRegister.Register();
             AvaloniaXamlLoader.Load(this);
         }
 
@@ -19,7 +23,10 @@ namespace GenSci.FamilyBudget.DesktopApp
             {
                 desktop.MainWindow = new MainWindow
                 {
-                    DataContext = new MainWindowViewModel(),
+                    DataContext = new MainWindowViewModel
+                    {
+                        Tabs = MainWindowRegister.TabItemViewModels
+                    },
                 };
             }
 

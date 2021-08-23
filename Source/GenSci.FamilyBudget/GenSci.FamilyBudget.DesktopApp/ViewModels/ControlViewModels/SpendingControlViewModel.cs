@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GenSci.FamilyBudget.DesktopApp.ViewModels.ViewModels
+namespace GenSci.FamilyBudget.DesktopApp.ViewModels
 {
-    class SpendingControlViewModel
+    public class SpendingControlViewModel : ViewModelBase
     {
     }
 }

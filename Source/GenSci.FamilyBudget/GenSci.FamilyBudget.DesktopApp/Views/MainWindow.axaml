@@ -8,10 +8,29 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="GenSci.FamilyBudget.DesktopApp">
 
-        <Design.DataContext>
-          <vm:MainWindowViewModel/>
-        </Design.DataContext>
+  <Design.DataContext>
+    <vm:MainWindowViewModel/>
+  </Design.DataContext>
 
-  <TabControl x:Name="mainTabControl">
+  <TabControl
+    Items="{Binding Tabs}"
+    Margin="0 16">
+    <TabControl.ItemTemplate>
+      <DataTemplate>
+        <TextBlock
+            Text="{Binding Header}">
+        </TextBlock>
+      </DataTemplate>
+    </TabControl.ItemTemplate>
+    <TabControl.ContentTemplate>
+      <DataTemplate>
+        <ContentControl Content="{Binding TabControl}"></ContentControl>
+      </DataTemplate>
+    </TabControl.ContentTemplate>
+    <TabControl.Styles>
+      <Style Selector="TabItem">
+        <Setter Property="IsEnabled" Value="{Binding IsEnabled}"/>
+      </Style>
+    </TabControl.Styles>
   </TabControl>
 </Window>

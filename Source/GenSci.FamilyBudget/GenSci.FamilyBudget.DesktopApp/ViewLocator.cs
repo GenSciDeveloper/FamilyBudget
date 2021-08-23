@@ -11,7 +11,7 @@ namespace GenSci.FamilyBudget.DesktopApp
 
         public IControl Build(object data)
         {
-            string? name = data.GetType().FullName!.Replace("ViewModel", "View");
+            string? name = data.GetType().FullName!.Replace("ViewModel", string.Empty);
             Type? type = Type.GetType(name);
 
             if (type != null)

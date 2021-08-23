@@ -6,6 +6,6 @@ namespace GenSci.FamilyBudget.DesktopApp.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        public string Greeting => "Welcome to Avalonia!";
+        public List<TabItemViewModel> Tabs { get; set; }
     }
 }
