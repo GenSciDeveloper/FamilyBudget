@@ -1,0 +1,27 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="100" d:DesignHeight="50"
+             x:Class="GenSci.FamilyBudget.DesktopApp.Views.Controls.FinanceBannerControl">
+  <UserControl.Styles>
+    <Style Selector="ContentControl">
+      <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
+      <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+      <Setter Property="Padding" Value="3"></Setter>
+    </Style>
+  </UserControl.Styles>
+  
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="0.35*"></RowDefinition>
+      <RowDefinition Height="0.65*"></RowDefinition>
+    </Grid.RowDefinitions>
+    <ContentControl Grid.Row="0" Background="Teal">
+      <TextBlock Foreground="White" Text="{Binding BannerName}"></TextBlock>
+    </ContentControl>
+    <ContentControl Grid.Row="1">
+      <TextBlock Text="{Binding BannerValue}"></TextBlock>
+    </ContentControl>
+  </Grid>
+</UserControl>
